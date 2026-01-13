@@ -44,7 +44,7 @@ export const themes:Theme[]=[
             primary: "#4A148C",     // deep purple
             secondary: "#1a237e",   // dark blue
             accent: "#FFD700",      // gold
-            glow: "rgba(74, 20, 140, 0.6)",
+            glow: "rgba(74, 20, 140, 0.7)",
         }
     },
     {
