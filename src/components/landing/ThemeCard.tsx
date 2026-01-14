@@ -15,13 +15,13 @@ function ThemeCard({theme}:ThemeCardProps){
 
     return(
         <div 
-        className="p-6 rounded-xl min-w-52 cursor-pointer text-center transition-all 
+        className="p-8 rounded-xl min-w-64 cursor-pointer text-center transition-all 
                 duration-300 ease-in-out hover:-translate-y-2 hover:scale-105"
         onMouseEnter={()=>setIsHovered(true)}
         onMouseLeave={()=>setIsHovered(false)}
         style={
             {
-                backgroundColor:theme.colors.primary,
+                background:`linear-gradient(180deg, #0a0a0f, ${theme.colors.primary}, ${theme.colors.secondary})`,
                 boxShadow: isHovered?`0 0 30px ${theme.colors.glow}`:"none"
             }
         }
