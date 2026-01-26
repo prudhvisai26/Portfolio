@@ -1,9 +1,8 @@
 'use client'
 
 import { Theme } from "@/src/data/themes";
+import useAudio from "@/src/hooks/useAudio";
 import {useState} from "react";
-
-
 
 interface ThemeCardProps{
     theme: Theme
@@ -12,12 +11,16 @@ interface ThemeCardProps{
 function ThemeCard({theme}:ThemeCardProps){
 
     const [isHovered,setIsHovered]=useState(false);
+    const hoverSound=useAudio(`/audio/themes/${theme.id}.mp3`)
 
     return(
         <div 
         className="p-8 rounded-xl min-w-64 cursor-pointer text-center transition-all 
                 duration-300 ease-in-out hover:-translate-y-2 hover:scale-105"
-        onMouseEnter={()=>setIsHovered(true)}
+        onMouseEnter={() => {
+                setIsHovered(true)
+                hoverSound.play()
+            }}
         onMouseLeave={()=>setIsHovered(false)}
         style={
             {

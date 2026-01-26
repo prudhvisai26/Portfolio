@@ -19,6 +19,15 @@ const generatePositions = () => {
     return pos
 }
 
+const generateSizes = () => {
+    const sizes = new Float32Array(count)
+    for(let i = 0; i < count; i++){
+        sizes[i] = Math.random() * 0.05 + 0.02  // Random between 0.02 and 0.07
+    }
+    return sizes
+}
+
+
 // Generate random speeds for variety
 const generateSpeeds = () => {
     const speeds = new Float32Array(count)
@@ -30,19 +39,22 @@ const generateSpeeds = () => {
 
 const particlePositions = generatePositions()
 const particleSpeeds = generateSpeeds()
+const particleSizes = generateSizes()  
 
 const Particles = () => {
     const pointsRef = useRef<THREE.Points>(null)
 
-    useFrame(() => {
+    useFrame((state) => {
         if(!pointsRef.current) return
 
         const positions = pointsRef.current.geometry.attributes.position.array as Float32Array
-        
+        const time = state.clock.elapsedTime
+
         for(let i = 0; i < count; i++){
             // Move up with individual speed
             positions[i * 3 + 1] += particleSpeeds[i]
-            positions[i * 3 + 0] += Math.sin(Date.now() * 0.001 + i) * 0.002
+            positions[i * 3 + 0] += Math.sin(time + i) * 0.002
+            // positions[i * 3 + 0] += Math.sin(Date.now() * 0.001 + i) * 0.002
             
             // Reset to bottom when reaching top
             if(positions[i * 3 + 1] > 15){
@@ -62,12 +74,16 @@ const Particles = () => {
                     attach="attributes-position"
                     args={[particlePositions, 3]}
                 />
+                <bufferAttribute 
+                    attach="attributes-size"
+                    args={[particleSizes,1]}
+                />
             </bufferGeometry>
             <pointsMaterial
-                size={0.02}
-                color="#ffffff"
+                size={0.07}
+                color="#ffd700"
                 transparent
-                opacity={0.7}
+                opacity={0.8}
                 sizeAttenuation={true}
                 depthWrite={false}
                 blending={THREE.AdditiveBlending} 
