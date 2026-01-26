@@ -6,12 +6,18 @@ import {useState} from "react";
 
 interface ThemeCardProps{
     theme: Theme
+    onThemeClick: (theme: Theme) => void  // NEW PROP
+
 }
 
-function ThemeCard({theme}:ThemeCardProps){
+function ThemeCard({theme,onThemeClick}:ThemeCardProps){
 
     const [isHovered,setIsHovered]=useState(false);
     const hoverSound=useAudio(`/audio/themes/${theme.id}.mp3`)
+
+        const handleClick = () => {
+        onThemeClick(theme)
+    }
 
     return(
         <div 
@@ -22,6 +28,7 @@ function ThemeCard({theme}:ThemeCardProps){
                 hoverSound.play()
             }}
         onMouseLeave={()=>setIsHovered(false)}
+        onClick={handleClick}
         style={
             {
                 background:`linear-gradient(180deg, #0a0a0f, ${theme.colors.primary}, ${theme.colors.secondary})`,

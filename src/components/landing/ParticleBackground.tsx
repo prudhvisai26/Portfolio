@@ -4,63 +4,51 @@ import { useRef } from "react"
 import { Canvas, useFrame } from '@react-three/fiber'
 import * as THREE from 'three'
 
-// Generate positions OUTSIDE component
-const count = 1000
+// Configuration
+const count = 800
 
+// Generate positions - spread across ENTIRE screen
 const generatePositions = () => {
     const pos = new Float32Array(count * 3)
-    
     for(let i = 0; i < count; i++){
-        pos[i * 3 + 0] = (Math.random() - 0.5) * 30  // x: wider spread
-        pos[i * 3 + 1] = (Math.random() - 0.5) * 30  // y: taller spread
-        pos[i * 3 + 2] = (Math.random() - 0.5) * 15-5  // z: push back from camera
+        pos[i * 3 + 0] = (Math.random() - 0.5) * 60   // X: full width
+        pos[i * 3 + 1] = (Math.random() - 0.5) * 60   // Y: full height
+        pos[i * 3 + 2] = (Math.random() - 0.5) * 20 - 5
     }
-    
     return pos
 }
 
-const generateSizes = () => {
-    const sizes = new Float32Array(count)
-    for(let i = 0; i < count; i++){
-        sizes[i] = Math.random() * 0.05 + 0.02  // Random between 0.02 and 0.07
-    }
-    return sizes
-}
-
-
-// Generate random speeds for variety
+// Generate speeds - varied for natural look
 const generateSpeeds = () => {
     const speeds = new Float32Array(count)
     for(let i = 0; i < count; i++){
-        speeds[i] = 0.005 + Math.random() * 0.02  // Random speed between 0.005 and 0.025
+        speeds[i] = 0.05 + Math.random() * 0.1   // Fast diagonal fall
     }
     return speeds
 }
 
 const particlePositions = generatePositions()
 const particleSpeeds = generateSpeeds()
-const particleSizes = generateSizes()  
 
-const Particles = () => {
+const DiagonalParticles = () => {
     const pointsRef = useRef<THREE.Points>(null)
 
-    useFrame((state) => {
+    useFrame(() => {
         if(!pointsRef.current) return
 
         const positions = pointsRef.current.geometry.attributes.position.array as Float32Array
-        const time = state.clock.elapsedTime
-
+        
         for(let i = 0; i < count; i++){
-            // Move up with individual speed
-            positions[i * 3 + 1] += particleSpeeds[i]
-            positions[i * 3 + 0] += Math.sin(time + i) * 0.002
-            // positions[i * 3 + 0] += Math.sin(Date.now() * 0.001 + i) * 0.002
+            // Move DIAGONALLY: down and left
+            positions[i * 3 + 0] -= particleSpeeds[i] * 0.6   // X: move left
+            positions[i * 3 + 1] -= particleSpeeds[i]          // Y: move down
             
-            // Reset to bottom when reaching top
-            if(positions[i * 3 + 1] > 15){
-                positions[i * 3 + 1] = -15
-                // Randomize X position when resetting for more natural look
-                positions[i * 3 + 0] = (Math.random() - 0.5) * 30
+            // Reset when off screen (bottom OR left)
+            if(positions[i * 3 + 1] < -30 || positions[i * 3 + 0] < -30){
+                // Reset to top-right area (random spread)
+                positions[i * 3 + 0] = (Math.random() * 40) + 10   // X: right side
+                positions[i * 3 + 1] = (Math.random() * 20) + 20   // Y: top
+                positions[i * 3 + 2] = (Math.random() - 0.5) * 20 - 5
             }
         }
         
@@ -74,19 +62,15 @@ const Particles = () => {
                     attach="attributes-position"
                     args={[particlePositions, 3]}
                 />
-                <bufferAttribute 
-                    attach="attributes-size"
-                    args={[particleSizes,1]}
-                />
             </bufferGeometry>
             <pointsMaterial
-                size={0.07}
-                color="#ffd700"
+                size={0.06}
+                color="#ffffff"
                 transparent
-                opacity={0.8}
+                opacity={0.85}
                 sizeAttenuation={true}
                 depthWrite={false}
-                blending={THREE.AdditiveBlending} 
+                blending={THREE.AdditiveBlending}
             />
         </points>
     )
@@ -96,10 +80,10 @@ function ParticleBackground(){
     return(
         <div className="absolute inset-0 z-0 w-full h-full">
             <Canvas camera={{ position: [0, 0, 10], fov: 75 }}>
-                <Particles />
+                <DiagonalParticles />
             </Canvas>
         </div>
     )
 }
 
-export default ParticleBackground;
+export default ParticleBackground
