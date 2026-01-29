@@ -5,7 +5,7 @@ import { Canvas, useFrame } from '@react-three/fiber'
 import * as THREE from 'three'
 
 // Configuration
-const count = 800
+const count = 900
 
 // Generate positions - spread across ENTIRE screen
 const generatePositions = () => {
