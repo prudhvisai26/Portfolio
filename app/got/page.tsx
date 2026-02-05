@@ -66,10 +66,10 @@ const portfolioData = {
       period: 'Jun 2022 – Jan 2024',
       location: 'Bangalore, India',
       highlights: [
-        'Built and optimized low-latency backend services in Java on Linux; improved median latency by 20% through query/index tuning, efficient pagination, and Redis caching',
-        'Developed reliable data-access and processing workflows over large datasets using PostgreSQL/MySQL, Redis, and event-driven components',
-        'Reduced incident triage by 30% with structured logs + traces (OpenTelemetry), ELK/Kibana, and tuned alerting in CloudWatch',
-        'Supported build and release workflows using Docker and GitHub Actions with safe deployment strategies (blue/green, canary) on AWS (EKS/ECS, RDS)',
+        'Built and optimized microservices in Java/Spring Boot exposing REST APIs; improved median latency 20% via pagination, SQL/index tuning, connection-pool tuning, and back-pressure/timeouts.',
+        'Designed data workflows on MySQL; implemented safe online migrations and schema versioning; wrote JUnit unit/integration tests and maintained code quality with Git reviews and CI/CD pipelines',
+        'Secured services with Spring Security (JWT/RBAC), validation, and rate limiting; documented contracts with OpenAPI for type-safe React/TypeScript clients.',
+        'Containerized and deployed with Docker to AWS (ECS/RDS/S3); automated build/release via CI/CD; tracked work and releases in Jira',
       ],
     },
     {
@@ -78,14 +78,23 @@ const portfolioData = {
       period: 'Jan 2022 – Jun 2022',
       location: 'Hyderabad, India',
       highlights: [
-        'Implemented backend services and API endpoints (Spring Boot/Java) with strong OOP practices; improved response time using pagination and rate limiting',
-        'Strengthened code quality through JUnit/Mockito tests and containerized integration testing; enforced CI quality gates with GitHub Actions',
-        'Tuned PostgreSQL/MySQL queries and indexes; Dockerized services and supported deployments to AWS with least-privilege IAM',
+        'Implemented backend features in Spring Boot/Java and integrated with a React (TypeScript/JavaScript) UI; added cursor/offset pagination, validation, and error handling to improve reliability.',
+        'Wrote JUnit tests and containerized integration tests; enforced Git branching/reviews and set up lightweight CI/CD for build/test/package.',
+        'Optimized MySQL queries and indexes; added structured application logs and runbooks to speed debugging.',
+        'Dockerized services and assisted deployments on AWS; handled secrets, least-privilege IAM, and environment configs; collaborated via Jira for sprint planning/tracking.',
       ],
     },
   ],
   
   projects: [
+    {
+      name: 'Mind Clash',
+      description: 'Real-time multiplayer quiz battle platform with live competition features.',
+      tech: ['React', 'Python', 'Sqlite', 'Three.js', 'Django','Socket.IO'],
+      icon: '🤖',
+      github: 'https://github.com/CS161-Software-Project/MindClash',
+      type: 'Group Project',
+    },
     {
       name: 'IntentFlow',
       description: 'Lightweight chatbot for intent classification using Dolphin-2.6-Mistral-7B model via llama.cpp. Generates polite, natural voice assistant responses.',
