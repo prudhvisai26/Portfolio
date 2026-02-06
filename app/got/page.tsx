@@ -14,19 +14,19 @@ const skillsData = {
     animation: 'fire',
   },
   'Databases': {
-    skills: ['MySQL', 'DynamoDB', 'MongoDB', 'PostgreSQL', 'Redis', 'SQLite'],
+    skills: ['MySQL', 'DynamoDB', 'MongoDB', 'PostgreSQL', 'SQLite'],
     icon: '🏰',
     color: '#ffd700',
     animation: 'gold',
   },
   'Cloud (AWS)': {
-    skills: ['S3', 'DynamoDB', 'Lambda', 'CloudWatch', 'EC2', 'ECS', 'EKS', 'RDS', 'IAM'],
+    skills: ['S3', 'DynamoDB', 'Lambda', 'CloudWatch', 'EC2', 'ECS', 'EKS', 'RDS'],
     icon: '☁️',
     color: '#4a9eff',
     animation: 'cloud',
   },
   'Data Science / ML': {
-    skills: ['scikit-learn', 'NLTK', 'TensorFlow', 'Keras', 'NLP', 'ML', 'LLM', 'llama.cpp'],
+    skills: ['scikit-learn', 'TensorFlow', 'Keras', 'NLP', 'ML', 'LLM'],
     icon: '🧠',
     color: '#a855f7',
     animation: 'neural',
