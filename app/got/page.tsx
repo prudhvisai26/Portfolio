@@ -71,10 +71,10 @@ const portfolioData = {
       location: 'Bangalore, India',
       icon: '👑',
       highlights: [
-        'Built and optimized microservices in Java/Spring Boot exposing REST APIs; improved median latency 20% via pagination, SQL/index tuning, connection-pool tuning, and back-pressure/timeouts',
-        'Designed data workflows on MySQL; implemented safe online migrations and schema versioning; wrote JUnit unit/integration tests and maintained code quality with Git reviews and CI/CD pipelines',
-        'Secured services with Spring Security (JWT/RBAC), validation, and rate limiting; documented contracts with OpenAPI for type-safe React/TypeScript clients',
-        'Containerized and deployed with Docker to AWS (ECS/RDS/S3); automated build/release via CI/CD; tracked work and releases in Jira',
+        'Designed and delivered a production Sales Incentive Management application using Node.js, Express, MongoDB, and React, supporting thousands of internal sales users and eliminating spreadsheet-based workflows, reducing manual finance reconciliation effort by 40%',
+        'Implemented core incentive calculation workflows evaluating monthly revenue attainment (actual sales vs quota), eligibility rules, and tier-based payouts; fixed incorrect formulas and added validation, reducing payout discrepancies and recalculation requests by 30%.',
+        'Designed distributed-safe backend APIs using idempotent REST endpoints, append-only data models, and ACID transactions, eliminating duplicate payouts and reducing incentive-processing latency by 20% during end-of-month and quarter-close spikes.',
+        'Productionized and scaled the application by deploying stateless services with Docker on AWS EC2, securing access via JWT (HttpOnlycookies) and RBAC, and automating builds/tests with GitHub Actions CI, reducing deployment-related incidents and debugging time by 25%.'
       ],
     },
     {
