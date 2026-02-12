@@ -1062,7 +1062,7 @@ function ContactContent({ onAtTop, onAtBottom }: { onAtTop: () => void; onAtBott
             <motion.span className="absolute -left-12 top-1/2 -translate-y-1/2 text-4xl" animate={{ x: [0, -5, 0], rotate: [0, -10, 0] }} transition={{ duration: 2, repeat: Infinity }}>🦅</motion.span>
             <motion.span className="absolute -right-12 top-1/2 -translate-y-1/2 text-4xl" animate={{ x: [0, 5, 0], rotate: [0, 10, 0] }} transition={{ duration: 2, repeat: Infinity }}>🦅</motion.span>
           </motion.div>
-          <motion.p className="text-gray-400 italic mt-2" animate={{ opacity: [0.6, 1, 0.6] }} transition={{ duration: 2, repeat: Infinity }}>Bend the Knee... or Send a Message</motion.p>
+          <motion.p className="text-gray-400 italic mt-2" animate={{ opacity: [0.6, 1, 0.6] }} transition={{ duration: 2, repeat: Infinity }}>Send a Message</motion.p>
         </motion.div>
 
         <motion.p className="text-xl text-gray-300 max-w-2xl mx-auto mb-10"
