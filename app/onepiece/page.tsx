@@ -867,9 +867,9 @@ function ProjectsContent({ onAtTop, onAtBottom }: { onAtTop: () => void; onAtBot
   )
 }
 
-// ============================================================================
+
 // EDUCATION CONTENT
-// ============================================================================
+
 function EducationContent({ onAtTop, onAtBottom }: { onAtTop: () => void; onAtBottom: () => void }) {
   return (
     <ScrollableSection color="#a855f7" onAtTop={onAtTop} onAtBottom={onAtBottom}>
