@@ -28,7 +28,7 @@ const skillsData = {
     icon: '🧭', color: '#00bfff', glow: 'rgba(0,191,255,0.6)', power: 'Chart any course',
   },
   'Treasure Vaults': {
-    skills: ['MySQL', 'DynamoDB', 'MongoDB', 'PostgreSQL', 'Redis', 'SQLite'],
+    skills: ['MySQL', 'MongoDB', 'PostgreSQL', 'SQLite'],
     icon: '💎', color: '#ffd700', glow: 'rgba(255,215,0,0.6)', power: 'Store the riches',
   },
   'Sky Islands': {
