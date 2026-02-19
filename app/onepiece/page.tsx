@@ -65,7 +65,7 @@ const portfolioData = {
     { value: '2+', label: 'Years at Sea', icon: '⚓', color: '#00bfff' },
     { value: '10+', label: 'Voyages Complete', icon: '🗺️', color: '#ffd700' },
     { value: '3.5', label: 'Captain Rating', icon: '⭐', color: '#ff6b6b' },
-    { value: '50+', label: 'Techniques Learned', icon: '💪', color: '#10b981' },
+    { value: '30+', label: 'Techniques Learned', icon: '💪', color: '#10b981' },
   ],
   
   experience: [
