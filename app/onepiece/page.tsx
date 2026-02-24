@@ -70,23 +70,23 @@ const portfolioData = {
   
   experience: [
     {
-      company: 'Accolite Digital', role: 'Senior Navigator', period: 'Jun 2022 – Jan 2024',
-      location: 'Bangalore, India', icon: '🏴‍☠️', crew: 'Grand Fleet',
+      company: 'Accolite Digital', role: 'Software Developer', period: 'Jun 2022 – Jan 2024',
+      location: 'Bangalore, India', icon: '🏴‍☠️', crew: 'Full Stack Developer',
       highlights: [
-        'Led expeditions to develop production-grade treasure management systems using Node.js, Express, MongoDB',
-        'Charted incentive calculation routes with 30% improved accuracy in reward distribution',
-        'Designed storm-proof backend APIs reducing latency by 20% during peak waves',
-        'Deployed containerized ships across AWS waters with full CI/CD navigation',
+        'Captained a production Sales Incentive Management build (Node.js, Express, MongoDB, React), replacing spreadsheet “treasure maps” across the fleet—supporting thousands of internal users and cutting finance reconciliation grind by 40%.',
+        'Drew the payout route: attainment (actual vs quota), eligibility checkpoints, and tiered reward levels; fixed wrong coordinates (formulas) and added verification—reducing payout disputes and reroute requests by 30%.',
+        'Built a storm-proof backend with idempotent REST endpoints, append-only logs, and ACID-secured transactions—stopping duplicate payouts and speeding up end-of-month/quarter voyages by 20%.',
+        'Shipped and stabilized at sea: Dockerized stateless services on AWS EC2, secured routes with JWT (HttpOnly) + RBAC, and automated CI via GitHub Actions—reducing deployment storms and debugging time by 25%.',
       ],
     },
     {
-      company: 'Accolite Digital', role: 'Cabin Boy Developer', period: 'Jan 2022 – Jun 2022',
-      location: 'Hyderabad, India', icon: '⚓', crew: 'Training Fleet',
+      company: 'Accolite Digital', role: 'Software Engineer Intern', period: 'Jan 2022 – Jun 2022',
+      location: 'Hyderabad, India', icon: '⚓', crew: 'Backend Developer',
       highlights: [
-        'Trained under senior navigators in Spring Boot and React combat',
-        'Practiced defensive coding through rigorous JUnit trials',
-        'Learned MySQL treasure optimization techniques',
-        'Assisted in cloud deployments across the digital seas',
+        'Joined the crew building a production Healthcare Patient Management & Billing system (Java, Spring Boot, MySQL, React), digitizing records, appointments, and billing—cutting manual entry errors by 25%.',
+        'Implemented EHR APIs with versioned logs and transactional safety to preserve history and reduce concurrency inconsistencies by 20%.',
+        'Built real-time appointment scheduling to avoid booking clashes, improving peak response times by 15%.',
+        'Engineered asynchronous reporting so monthly outcomes/billing reports could be generated without anchoring (locking) core tables—improving responsiveness and reducing report-related performance issues by 30%.',
       ],
     },
   ],
@@ -480,7 +480,7 @@ function FloatingBubbles() {
             border: '1px solid rgba(255,255,255,0.2)',
           }}
           animate={{
-            y: [0, -window.innerHeight * 1.2],
+            y: [0,  -1200],
             x: [0, (bubble.seed - 0.5) * 50, 0],
             opacity: [0, 0.8, 0.6, 0],
             scale: [0.5, 1, 1.2, 0.8],
@@ -518,7 +518,7 @@ function ScrollableSection({ children, color, onAtTop, onAtBottom }: { children:
 
   return (
     <div className="relative w-full h-full flex items-center justify-center">
-      <div ref={scrollRef} onWheel={handleWheel} className="overflow-y-auto overflow-x-hidden max-h-[85vh] w-full op-scroll" style={{ scrollbarWidth: 'thin', scrollbarColor: `${color}50 transparent` }}>
+      <div ref={scrollRef} onWheel={handleWheel} className="overflow-y-auto overflow-x-hidden max-h-[85vh] w-full op-scroll overscroll-contain" style={{ scrollbarWidth: 'thin', scrollbarColor: `${color}50 transparent` }}>
         <style>{`.op-scroll::-webkit-scrollbar{width:8px}.op-scroll::-webkit-scrollbar-track{background:rgba(0,50,100,0.3);border-radius:4px}.op-scroll::-webkit-scrollbar-thumb{background:linear-gradient(180deg,${color}90,${color}50);border-radius:4px;box-shadow:0 0 10px ${color}60}`}</style>
         {children}
       </div>
@@ -572,7 +572,7 @@ export default function OnePiecePortfolio() {
   }, [currentSection, isTransitioning])
 
   const handleWheel = useCallback((e: WheelEvent) => {
-    const now = Date.now(); if (now - lastScrollTime.current < 2000 || isTransitioning) return
+    const now = Date.now(); if (now - lastScrollTime.current < 800 || isTransitioning) return
     const target = e.target as HTMLElement; if (target.closest('.op-scroll')) return; e.preventDefault()
     if (e.deltaY > 30 && currentSection < sections.length - 1) { lastScrollTime.current = now; transitionToSection(currentSection + 1) }
     else if (e.deltaY < -30 && currentSection > 0) { lastScrollTime.current = now; transitionToSection(currentSection - 1) }

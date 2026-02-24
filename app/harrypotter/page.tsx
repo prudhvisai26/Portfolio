@@ -57,7 +57,7 @@ const portfolioData = {
     { value: '2+', label: 'Years of Magic', icon: '⚡', color: '#ffd700' },
     { value: '10+', label: 'Spells Mastered', icon: '📜', color: '#ff6b6b' },
     { value: '3.5', label: 'N.E.W.T. Score', icon: '🦉', color: '#a55eea' },
-    { value: '50+', label: 'Magical Skills', icon: '✨', color: '#2ed573' },
+    { value: '35+', label: 'Magical Skills', icon: '✨', color: '#2ed573' },
   ],
   
   experience: [
@@ -65,20 +65,20 @@ const portfolioData = {
       company: 'Accolite Digital', role: 'Senior Software Wizard', period: 'Jun 2022 – Jan 2024',
       location: 'Bangalore, India', icon: '🏰', houseColor: '#2ed573',
       highlights: [
-        'Conjured and optimized microservices using ancient Java enchantments; improved spell-casting latency by 20% through advanced caching incantations',
-        'Designed magical data workflows on MySQL with safe schema transformations; maintained code quality through rigorous spell-checking',
-        'Protected services with powerful security wards (JWT/RBAC), input validation hexes, and rate-limiting charms',
-        'Deployed containerized spells to the AWS cloud realm; automated magical releases via CI/CD portals',
+        'Conjured a production Sales Incentive Management application (Node.js, Express, MongoDB, React), retiring “ancient scrolls” (spreadsheets), supporting thousands of internal users and reducing reconciliation effort by 40%.',
+        'Authored the Incentivus Calculus: attainment checks (actual vs quota), eligibility charms, and tiered payout enchantments; repaired faulty runes (formulas) and added validation wards—cutting payout discrepancies and re-casting (recalculation) requests by 30%.',
+        'Crafted defensive backend magic: idempotent REST spells, append-only ledgers, and ACID-protected vaults—eliminating duplicate payouts and accelerating close-season processing by 20%.',
+        'Took it through Auror-grade deployment: Dockerized services on AWS EC2, protected access using JWT (HttpOnly) + RBAC, and automated builds/tests with GitHub Actions—reducing deployment mishaps and debugging time by 25%.',
       ],
     },
     {
       company: 'Accolite Digital', role: 'Apprentice Developer', period: 'Jan 2022 – Jun 2022',
       location: 'Hyderabad, India', icon: '📚', houseColor: '#70a1ff',
       highlights: [
-        'Studied the ancient arts of Spring Boot and React under senior wizards; mastered pagination spells',
-        'Practiced defensive coding through JUnit trials; maintained magical code quality standards',
-        'Learned MySQL query optimization through powerful index enchantments',
-        'Assisted in cloud deployments; managed secrets with the wisdom of a young wizard',
+        'Assisted in enchanting a production Healthcare Patient Management & Billing system (Java, Spring Boot, MySQL, React), digitizing patient workflows and reducing manual entry errors by 25%.',
+        'Built EHR APIs using versioned tomes and transactional protections to preserve medical history and reduce concurrent-update inconsistencies by 20%.',
+        'Implemented real-time appointment scheduling to prevent booking collisions, improving peak response times by 15%.',
+        'Created an asynchronous reporting charm to generate monthly outcomes and billing reports without freezing core transactional tables—improving responsiveness and reducing reporting performance issues by 30%.',
       ],
     },
   ],

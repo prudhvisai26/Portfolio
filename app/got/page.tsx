@@ -60,7 +60,7 @@ const portfolioData = {
     { value: '2+', label: 'Years Experience', icon: '⚔️' },
     { value: '10+', label: 'Projects Built', icon: '🏰' },
     { value: '3.5', label: 'GPA (MS)', icon: '📜' },
-    { value: '50+', label: 'Skills Mastered', icon: '🐉' },
+    { value: '30+', label: 'Skills Mastered', icon: '🐉' },
   ],
   
   experience: [
@@ -194,7 +194,7 @@ const sections = [
   { id: 'experience', name: 'Experience', house: 'LANNISTER', color: '#ffd700', accent: '#ffed4a', motto: 'Hear Me Roar' },
   { id: 'projects', name: 'Projects', house: 'BARATHEON', color: '#ffd700', accent: '#ffffff', motto: 'Ours is the Fury' },
   { id: 'education', name: 'Education', house: 'CITADEL', color: '#c9a227', accent: '#f5e6c8', motto: 'Knowledge is Power' },
-  { id: 'contact', name: 'Contact', house: 'IRON THRONE', color: '#888888', accent: '#cccccc', motto: 'Bend the Knee' },
+  { id: 'contact', name: 'Contact', house: 'IRON THRONE', color: '#888888', accent: '#cccccc', motto: 'For the throne' },
 ]
 
 // ============================================================
